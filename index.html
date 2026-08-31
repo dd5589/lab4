@@ -9,19 +9,20 @@
 <body>
 
   <header>
-  <div class="header-container">
-    <a href="#" class="logo">
-      <img src="logo.png" alt="Logo">
-    </a>
-  </div>
-</header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="Web">
+      </a>
+    </div>
+  </header>
 
   <div class="container">
     
+    <!-- Навигация (вкладки) -->
     <aside class="sidebar-left">
       <ul class="nav-menu">
-        <li><a href="#">Main page</a></li>
-        <li><a href="#" class="active">Secondary page</a></li>
+        <li><a href="#" class="active">Main page</a></li>
+        <li><a href="#">Secondary page</a></li>
         <li><a href="#">Some other page</a></li>
         <li><a href="#">More pages to the god of pages</a></li>
         <li><a href="#">The last page</a></li>
@@ -86,6 +87,17 @@
   <footer>
     Simple footer (text in the center).
   </footer>
+
+  <!-- Переключение вкладок при клике -->
+  <script>
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.nav-menu a').forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
