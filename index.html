@@ -21,11 +21,11 @@
     <!-- Навигация (вкладки) -->
     <aside class="sidebar-left">
       <ul class="nav-menu">
-        <li><a href="#" class="active">Main page</a></li>
-        <li><a href="#">Secondary page</a></li>
-        <li><a href="#">Some other page</a></li>
-        <li><a href="#">More pages to the god of pages</a></li>
-        <li><a href="#">The last page</a></li>
+        <li><a href="#main" class="active">Main page</a></li>
+        <li><a href="#secondary">Secondary page</a></li>
+        <li><a href="#other">Some other page</a></li>
+        <li><a href="#more">More pages to the god of pages</a></li>
+        <li><a href="#last">The last page</a></li>
       </ul>
     </aside>
 
@@ -88,13 +88,13 @@
     Simple footer (text in the center).
   </footer>
 
-  <!-- Переключение вкладок при клике -->
+  <!-- Переключение вкладок с убиранием фона у старой и добавлением тёмного фона новой -->
   <script>
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.nav-menu a').forEach(item => item.classList.remove('active'));
-        link.classList.add('active');
+    const links = document.querySelectorAll('.nav-menu a');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        links.forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
       });
     });
   </script>
