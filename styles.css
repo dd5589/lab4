@@ -4,6 +4,17 @@
   padding: 0;
 }
 
+/* Зеленое выделение текста (как на Ris9.png) */
+::selection {
+  background-color: #a8dbce;
+  color: #005c4b;
+}
+
+::-moz-selection {
+  background-color: #a8dbce;
+  color: #005c4b;
+}
+
 body {
   background-color: #edeef0;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,12 +47,15 @@ header {
 }
 
 .logo {
-  color: #1b4f72;
-  font-size: 32px;
-  font-weight: bold;
-  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  line-height: 1;
+}
+
+.logo img {
+  height: 30px;
+  width: auto;
+  display: block;
 }
 
 .container {
@@ -77,6 +91,7 @@ header {
   transition: background-color 0.15s ease;
 }
 
+/* Серый/темный фон активной и выделенной вкладки (Ris7_2, Ris8_2) */
 .nav-menu li a:hover,
 .nav-menu li a.active {
   background-color: #e1e5eb;
@@ -161,13 +176,15 @@ footer {
   margin-top: auto;
 }
 
+/* Скрытие правой колонки на средних экранах */
 @media (max-width: 880px) {
   .sidebar-right {
     display: none;
   }
 }
 
-@media (max-width: 620px) {
+/* Перемещение вкладок наверх при уменьшении окна/экрана (Ris3_2) */
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: stretch;
